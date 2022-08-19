@@ -1,0 +1,541 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+:root {
+  --clr-primary-1: hsl(0, 0%, 98%);
+  --clr-primary-2: hsl(0, 0%, 41%);
+  --clr-neutral-1: hsl(0, 0%, 8%);
+  --bezier: cubic-bezier(0.3, -0.01, 0.49, 1);
+}
+
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Epilogue', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.nav-toggle {
+  display: none;
+}
+.logo {
+  margin-top: 0.3em;
+}
+#logo {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.all-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22em;
+}
+
+.menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1em;
+  position: relative;
+  list-style: none;
+}
+
+.arrows {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#a-down,
+#a-up {
+  display: block;
+  max-width: 100%;
+  height: 0.4em;
+}
+
+/* sub-menu arrows event */
+
+#a-down {
+  display: block;
+}
+
+#a-down.hid-all {
+  display: none;
+}
+
+#a-up {
+  display: none;
+}
+
+#a-up.sho-all {
+  display: block;
+}
+
+.sub-menu-1 ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  position: absolute;
+  padding: 0;
+  gap: 0;
+  left: -0.7em;
+  top: 2.3em;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  list-style: none;
+  text-align: center;
+  padding: 0.5em 0.8em 0.5em 0.8em;
+  border-radius: 5px;
+  display: none;
+}
+
+.sub-menu-1 li div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+}
+#todo-list,
+#reminders,
+#planning,
+#calender {
+  display: block;
+  max-width: 100%;
+  height: 1em;
+  object-fit: contain;
+}
+.sub-menu-2 ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  position: absolute;
+  padding: 0;
+  gap: 0;
+  left: 9.1em;
+  top: 2.3em;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  list-style: none;
+  padding: 0.5em 0.8em 0.5em 0.8em;
+  border-radius: 5px;
+  display: none;
+}
+.show-sm1.sub-menu-1 ul,
+.show-sm2.sub-menu-2 ul {
+  display: block;
+}
+.sub-menu-2 ul li,
+.sub-menu-1 ul li {
+  text-align: left;
+  width: 100%;
+  padding: 0;
+}
+
+.sub-menu-1 li a {
+  width: 100%;
+}
+.nav-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul li a,
+.logo-reg a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: black;
+  cursor: pointer;
+  line-height: 1.8rem;
+}
+li img {
+  display: block;
+  max-width: 100%;
+  height: 0.8em;
+  object-fit: cover;
+}
+
+.logo-reg {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2em;
+}
+.btn {
+  background: transparent;
+  border: 2px solid black;
+  border-radius: 0.8em;
+  padding: 0.5em 1em 0.5em 1em;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mct .btn {
+  background: black;
+  color: white;
+  border-radius: 0.8em;
+  padding: 0.5em 1em 0.5em 1em;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.main-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58%;
+  margin: auto;
+  margin-top: 2.3em;
+  gap: 2em;
+}
+.main-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  margin-top: 3em;
+  gap: 3em;
+}
+.s-head {
+  display: none;
+}
+h1 {
+  text-align: left;
+  font-size: 3.5rem;
+}
+p {
+  font-size: 15px;
+  text-align: left;
+  line-height: 1.5rem;
+  width: 80%;
+}
+
+#hero {
+  display: block;
+  min-width: 100%;
+  height: 28em;
+  object-fit: cover;
+  margin: auto;
+}
+#s-hero {
+  display: none;
+}
+.mct .btn {
+  background: black;
+  color: white;
+  border-radius: 0.8em;
+  padding: 0.5em 1em 0.5em 1em;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 1em;
+  outline: none;
+}
+.mct .btn:hover {
+  background: white;
+  color: black;
+  outline: none;
+  cursor: pointer;
+}
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1em;
+  margin-top: 3em;
+}
+
+#data {
+  display: block;
+  max-width: 100%;
+  height: 1.3em;
+  object-fit: cover;
+}
+#audio {
+  display: block;
+  max-width: 100%;
+  height: 1.3em;
+  object-fit: cover;
+}
+#meet {
+  display: block;
+  max-width: 100%;
+  height: 1.3em;
+  object-fit: cover;
+}
+#maker {
+  display: block;
+  max-width: 100%;
+  height: 1.3em;
+  object-fit: cover;
+}
+@media screen and (max-width: 500px) {
+  body {
+    overflow: scroll;
+    height: 1050px;
+    padding-bottom: 0em;
+    margin-bottom: 0em;
+  }
+  .all-menu {
+    all: unset;
+    position: fixed;
+    gap: 0em;
+    flex-direction: column;
+    background: hsl(0 0% 100%);
+    inset: 0 0 0 35%;
+    justify-content: center;
+    flex-grow: 1;
+    margin: 0;
+    padding: min(30vh, 7.8rem) 0em;
+    display: none;
+  }
+
+  .all-menu.show-all {
+    display: block;
+  }
+
+  .show-all li {
+    opacity: 0;
+    animation: fadeIn var(--bezier) 1s forwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateX(200px);
+    }
+    75% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 0.2em;
+    padding: 0em 0em 0em 0.6em;
+    position: absolute;
+    top: 3em;
+    left: 1em;
+  }
+  .menu ul li {
+    text-align: left;
+    width: 100%;
+    padding: 0;
+    font-size: 0.85rem;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+  .logo {
+    position: absolute;
+    z-index: 999;
+    left: 0.7em;
+    top: 0.45em;
+  }
+  #open {
+    position: absolute;
+    top: 0.9em;
+    right: 0.8em;
+    z-index: 999;
+    max-width: 100%;
+    height: 1em;
+  }
+  #close {
+    position: fixed;
+    top: 0.9em;
+    right: 0.8em;
+    z-index: 999;
+    max-width: 100%;
+    height: 1.5em;
+  }
+  .features a,
+  .company a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    text-align: left;
+  }
+
+  .sub-menu-1 ul li,
+  .sub-menu-2 ul li {
+    padding: 0.2em 0em 0.2em 0em;
+    text-align: left;
+    width: 100%;
+    gap: 0em;
+    font-size: 0.8rem;
+    margin: 0em;
+  }
+
+  #todo-list,
+  #reminders,
+  #planning,
+  #calender {
+    display: block;
+    max-width: 100%;
+    height: 1.3em;
+    object-fit: contain;
+  }
+  .sub-menu-1 li div {
+    gap: 0.1em;
+  }
+
+  .sub-menu-1 ul {
+    all: unset;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    padding: 0.5em 0.8em 0em 0.8em;
+    margin-left: 0.8em;
+    margin-top: 0em;
+    display: none;
+  }
+  .sub-menu-2 ul {
+    all: unset;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    padding: 0.5em 0.8em 0em 0.8em;
+    display: none;
+  }
+  .comp,
+  .feat {
+    margin-right: 4em;
+    padding-bottom: 0.1em;
+  }
+  /* event */
+  .show-sm1.sub-menu-1 ul,
+  .show-sm2.sub-menu-2 ul {
+    display: block;
+  }
+
+  .logo-reg {
+    flex-direction: column;
+    position: relative;
+    gap: 0.4em;
+    align-items: center;
+    top: 12em;
+    right: 0em;
+  }
+  /* event */
+  .slr.logo-reg {
+    top: 19em;
+    right: 0em;
+  }
+
+  .logo-reg .btn {
+    background: transparent;
+    border: 1px solid black;
+    border-radius: 0.8em;
+    padding: 0.5em 1em 0.5em 1em;
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    width: 10em;
+  }
+
+  /* open and close event */
+  .close {
+    display: none;
+  }
+  .close.show-all {
+    display: block;
+  }
+  .open.hide-all {
+    display: none;
+  }
+
+  #hero {
+    display: none;
+  }
+
+  #s-hero {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  .main-center {
+    flex-direction: column-reverse;
+    width: 100%;
+    margin-top: 3em;
+    padding: 1.5em 0em 0em 0em;
+  }
+
+  .main-cont {
+    width: 90%;
+    margin: auto;
+    margin-top: 2em;
+    gap: 0em;
+  }
+  .mct h1 {
+    display: none;
+  }
+  .mct .s-head {
+    display: block;
+  }
+  .s-head {
+    width: 100%;
+    font-size: 1.7rem;
+    margin: auto;
+    text-align: center;
+  }
+  p {
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.5rem;
+    width: 100%;
+    margin: auto;
+    margin-top: 1em;
+  }
+  .mct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2em;
+  }
+
+  .foot {
+    gap: 1em;
+    margin-top: 0;
+    padding: 2em 0.5em 1em 0.5em;
+  }
+
+  #data {
+    height: 100%;
+  }
+  #audio {
+    height: 100%;
+  }
+  #meet {
+    height: 100%;
+  }
+  #maker {
+    height: 100%;
+  }
+}
